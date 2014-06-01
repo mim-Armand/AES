@@ -69,6 +69,16 @@ g2tdescriptionText = g2tdescriptionTextPnl.add('staticText', undefined, '\ntechn
     scrolling: false,
     justify: "center"
 });
+var infoTab = tpanel.add("tab", undefined, "info");
+var inforText = infoTab.add('staticText', undefined, 'Init . . . \n \n \n \n \n \n \n \n \n \n \n \n \n',{
+    multiline: true
+});
+inforText.preferredSize.width = windowWidth;
+var infoRefreshBtn = infoTab.add('button', undefined, 'Refresh!');
+infoRefreshBtn.preferredSize.width = windowWidth;
+infoRefreshBtn.onClick = function(){
+    mimGetInfo();
+}
 g2tdescriptionText.preferredSize = [windowWidth, 120];
 var aboutPanel = tpanel.add("tab", undefined, "About");
 var aboutPanelText = aboutPanel.add('staticText', undefined, 'About text Needs to be added!\n\n\nmim.Armand\n2014\nParis', {
@@ -106,6 +116,28 @@ function g2tConvertFunction() {
 function g2tPgrUpdate(v){
     g2tPrg.value = v;
     $.sleep(66);
+}
+mimGetInfo();
+function mimGetInfo(){
+    mimIsFacingPages = app.documents[0].documentPreferences.facingPages;
+    mimDocumentHeight = Math.round(app.documents[0].documentPreferences.pageHeight);
+    mimDocumentWidth = Math.round(app.documents[0].documentPreferences.pageWidth);
+    mimDocumentPages = app.documents[0].pages.length;
+    mimDocumentPageSize = app.documents[0].documentPreferences.pageSize;
+    mimDocumentStartingPage = app.documents[0].documentPreferences.startPageNumber;
+    mimDocOrientation = ((app.documents[0].documentPreferences.pageOrientation == 2003395685) ? 'Landscape' : 'Portrait') + '  ('+ app.documents[0].documentPreferences.pageOrientation +')' ;
+    inforText.text = (app.documents[0].reflect.name + ' :' + app.documents[0].name +
+    '\nID: ' + app.documents[0].id +
+    '\nTotal Pages: '+ mimDocumentPages +
+    '\nDocument Height: '+ mimDocumentHeight+
+    '\nDocument Width: '+ mimDocumentWidth+
+    '\nPage Size: '+ mimDocumentPageSize+
+    '\nStarting Page: '+ mimDocumentStartingPage+
+    '\nIndex: ' + app.documents[0].index+
+    '\nLabel: '+ app.documents[0].label+
+    '\nOrientation: '+ mimDocOrientation+
+    '\nFacing pages? ' + mimIsFacingPages+
+    '\ncurrent '+app.activeWindow.activePage.reflect.name + ': ' + app.activeWindow.activePage.name);
 }
 
 /*  Bob Stucky Code:

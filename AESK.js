@@ -7,7 +7,7 @@ var mimWin = new Window('window', 'AES Toolkit', undefined, {
     borderless: false
 });
 var mimWinPnl = mimWin.add('panel', undefined, 'AES mini-kit');
-descriptionText = mimWinPnl.add('staticText', undefined, 'a set of tools to help development of Adobe Extendscript scripts (currently just includes Graphic2Texture!)', {
+descriptionText = mimWinPnl.add('staticText', undefined, 'a set of tools to help development of Adobe Extendscript scripts', {
     helpTip: 'Toolkit Descriptions',
     indent: 6,
     multiline: true,
@@ -80,10 +80,14 @@ infoRefreshBtn.onClick = function(){
     mimGetInfo();
 }
 g2tdescriptionText.preferredSize = [windowWidth, 120];
+
+var indiconsTab = tpanel.add("tab", undefined, "Indesign Icons");
+indiconsTab.add('staticText',undefined,'\n\n\n\n\nto be added in next versions (need some improvements still',{multiline:true});
+
 var aboutPanel = tpanel.add("tab", undefined, "About");
-var aboutPanelText = aboutPanel.add('staticText', undefined, 'About text Needs to be added!\n\n\nmim.Armand\n2014\nParis', {
+var aboutPanelText = aboutPanel.add('staticText', undefined, 'About text Needs to be added!\n...\n\n\nmim.Armand\n2014\nParis\n\n\nhttp://armand.eu', {
     multiline: true
-});
+}).preferredSize.width = windowWidth;
 mimWin.show();
 function fileBrowser() {
     myFolder = File.openDialog("please choose an image", "All files: *.*, PNG: *.png, ID Icons: *.idrc,Joint Photographic Experts Group : *.jpg", false);

@@ -2,12 +2,12 @@
 //Set to 8.0 scripting object model
 app.scriptPreferences.version = 8.0;
 app.scriptPreferences.enableRedraw = true;
-var windowWidth = 350;
+var windowWidth = 369;
 var mimWin = new Window('window', 'AES Toolkit', undefined, {
     borderless: false
 });
 var mimWinPnl = mimWin.add('panel', undefined, 'AES mini-kit');
-descriptionText = mimWinPnl.add('staticText', undefined, 'a set of tools to help development of Adobe Extendscript scripts', {
+descriptionText = mimWinPnl.add('staticText', undefined, 'a set of tools to help development of Adobe Extendscript!', {
     helpTip: 'Toolkit Descriptions',
     indent: 6,
     multiline: true,

@@ -2,12 +2,12 @@
 //Set to 8.0 scripting object model
 app.scriptPreferences.version = 8.0;
 app.scriptPreferences.enableRedraw = true;
-var windowWidth = 369;
+var windowWidth = 350;
 var mimWin = new Window('window', 'AES Toolkit', undefined, {
     borderless: false
 });
 var mimWinPnl = mimWin.add('panel', undefined, 'AES mini-kit');
-descriptionText = mimWinPnl.add('staticText', undefined, 'a set of tools to help development of Adobe Extendscript!', {
+descriptionText = mimWinPnl.add('staticText', undefined, 'a set of tools to help development of Adobe Extendscript scripts', {
     helpTip: 'Toolkit Descriptions',
     indent: 6,
     multiline: true,
@@ -129,6 +129,7 @@ function mimGetInfo(){
     mimDocumentPages = app.documents[0].pages.length;
     mimDocumentPageSize = app.documents[0].documentPreferences.pageSize;
     mimDocumentStartingPage = app.documents[0].documentPreferences.startPageNumber;
+    mimDocumentUnit = app.documents[0].viewPreferences.horizontalMeasurementUnits;
     mimDocOrientation = ((app.documents[0].documentPreferences.pageOrientation == 2003395685) ? 'Landscape' : 'Portrait') + '  ('+ app.documents[0].documentPreferences.pageOrientation +')' ;
     inforText.text = (app.documents[0].reflect.name + ' :' + app.documents[0].name +
     '\nID: ' + app.documents[0].id +
@@ -141,6 +142,7 @@ function mimGetInfo(){
     '\nLabel: '+ app.documents[0].label+
     '\nOrientation: '+ mimDocOrientation+
     '\nFacing pages? ' + mimIsFacingPages+
+    '\nUnit: (srry but int!!!)' + mimDocumentUnit +
     '\ncurrent '+app.activeWindow.activePage.reflect.name + ': ' + app.activeWindow.activePage.name);
 }
 

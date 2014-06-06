@@ -8,3 +8,9 @@
 > I just added an info tab with some useful info about the active document
 
 > on the other tab Indesign Icons) Later I'll try to add a list of available icons in indesign (the list is long so I'm not sure if it gonna be possible, but will see!) ;)
+
+
+Todo next:
+
+- [ ] A cleaner version of info tab
+- [ ] work on ID icons tab (first implementation)

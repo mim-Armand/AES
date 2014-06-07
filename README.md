@@ -14,3 +14,6 @@ Todo next:
 
 - [ ] A cleaner version of info tab
 - [ ] work on ID icons tab (first implementation)
+- [ ] save and retrive user prefrences on file system
+  - [ ] define the parameters needed to be saved
+  - [ ] add the settings (prefrences) tab or menue to the toolkit

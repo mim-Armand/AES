@@ -17,3 +17,4 @@ Todo next:
 - [ ] save and retrive user prefrences on file system
   - [ ] define the parameters needed to be saved
   - [ ] add the settings (prefrences) tab or menue to the toolkit
+  - [ ] option to save different profile names
